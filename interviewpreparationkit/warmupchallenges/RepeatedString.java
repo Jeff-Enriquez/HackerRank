@@ -1,3 +1,5 @@
+package hackerrank.interviewpreparationkit.warmupchallenges;
+
 class RepeatedString {
     public static void main(String[] args){
         Print.print(
