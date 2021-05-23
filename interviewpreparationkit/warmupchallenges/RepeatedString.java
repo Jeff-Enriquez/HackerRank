@@ -1,21 +1,39 @@
-package hackerrank.interviewpreparationkit.warmupchallenges;
-
 class RepeatedString {
+
     public static void main(String[] args){
-        Print.print(
-            "SOLUTION 1",
-            solution1("aba", 10), // Expecting: 7
-            solution1("a", 1000000000000L) // Expecting: 1000000000000
+
+        // First test for solution 1
+        printTest(
+            "Solution 1.1",
+            solution1("aba", 10),
+            7 // <- this is the expected result
         );
 
-        Print.print(
-            "SOLUTION 2", 
-            solution2("aba", 10), // Expecting: 7
-            solution2("a", 1000000000000L) // Expecting: 1000000000000
+        // Second test for solution 1
+        printTest(
+            "SOLUTION 1.2",
+            solution1("a", 1000000000000L),
+            1000000000000L // <- this is the expected result
         );
-        
+
+        // First test for solution 2
+        printTest(
+            "Solution 2.1",
+            solution2("aba", 10),
+            7 // <- this is the expected result
+        );
+
+        // Second test for solution 2
+        printTest(
+            "SOLUTION 2.2",
+            solution2("a", 1000000000000L),
+            1000000000000L // <- this is the expected result
+        );
+
     }
 
+    // Big O Space Complexity: O(1)
+    // Big O Time Complexity: O(n)
     public static long solution1(String s, long n) {
         
         // Keep track of how many a's are in the string
@@ -72,6 +90,9 @@ class RepeatedString {
 
     }
 
+    // Big O Space Complexity: O(1)
+    // Big O Time Complexity: O(n)
+    // Better than solution 1
     public static long solution2(String s, long n) {
         
         // Keep track of how many a's are in the string
@@ -131,4 +152,11 @@ class RepeatedString {
 
     }
 
+    public static void printTest(String solution, long result, long expected) {
+        System.out.print( "\u001B[33m" +
+            solution + "\n" + "\u001B[0m" +
+            "Result: " + "\u001B[35m" + result + "\u001B[0m" + " | " +
+            "Expected: " + "\u001B[34m" + expected + "\u001B[0m" + "\n"
+        );
+    }
 }
