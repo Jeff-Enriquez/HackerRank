@@ -1,7 +1,7 @@
 import java.util.*;
 public class JumpingOnTheClouds {
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 
         printTest(
             "Solution 1", 
