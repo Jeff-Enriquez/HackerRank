@@ -11,7 +11,9 @@ public class SalesByMatch {
             3 // <- this is the expected result 
             );
     }
-
+    
+    // Big O Space Complexity: O(1)
+    // Big O Time Complexity: O(n)
     public static int sockMerchant(int n, List<Integer> ar) {
         int numOfPairs = 0;
         Set<Integer> pairs = new HashSet<>();
