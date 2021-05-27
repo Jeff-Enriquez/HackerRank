@@ -15,6 +15,8 @@ public class AlternatingCharacters {
         );
     }
 
+    // Big O Space Complexity: O(1)
+    // Big O Time Complexity: O(n)
     public static int solution1(String s){
         // Count how many characters need to be deleted to make the strings an anagram
         int deleteCount = 0;
@@ -46,7 +48,7 @@ public class AlternatingCharacters {
                 j++;
             }
         }
-        
+
         return deleteCount;
     }
 
