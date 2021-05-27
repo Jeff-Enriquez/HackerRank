@@ -1,6 +1,4 @@
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class SalesByMatch {
 
@@ -14,7 +12,7 @@ public class SalesByMatch {
     
     // Big O Space Complexity: O(1)
     // Big O Time Complexity: O(n)
-    public static int sockMerchant(int n, List<Integer> ar) {
+    public static int solution1(int n, List<Integer> ar) {
         int numOfPairs = 0;
         Set<Integer> pairs = new HashSet<>();
         for(int i = 0; i < n; i++){
