@@ -39,25 +39,28 @@ public class SherlockAndTheValidString {
         Collections.sort(values);
 
         // Get the first value
-        Integer firstValue = values.get(0);
+        final Integer firstValue = values.get(0);
         // Get the last value
-        Integer lastValue = values.get(values.size()-1);
-        // Get the second to last value
-        Integer secondLastValue = values.get(values.size()-2);
+        final Integer lastValue = values.get(values.size()-1);
 
-        /*
-            We are only allowed to delete one character to have all the character counts be the same
-            Example:
-                firstValue = 2
-                lastValue = 3
-                secondLastValue = 3
-            This is why we need the lastValue and secondLastValue
-        */
-        Integer difference = lastValue - firstValue;
-        difference += secondLastValue - firstValue;
-        
-        if(difference > 1){
-            return "NO";
+        if(firstValue.intValue() == 1 && !firstValue.equals(lastValue)){
+            try {
+                Integer secondLastValue = values.get(values.size()-2);
+                return secondLastValue.equals(lastValue) ? "YES" : "NO";
+            } catch(IndexOutOfBoundsException e){
+                return lastValue - firstValue <= 1 ? "YES" : "NO";
+            }
+        }
+        if(!firstValue.equals(lastValue)){
+            if(lastValue - firstValue > 1){
+                return "NO";
+            }
+            try {
+                Integer secondLastValue = values.get(values.size()-2);
+                return secondLastValue.equals(firstValue) ? "YES" : "NO";
+            } catch(IndexOutOfBoundsException e){
+                return "YES";
+            }
         }
         return "YES";
     }
