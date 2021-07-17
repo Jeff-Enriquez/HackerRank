@@ -3,7 +3,7 @@ import java.nio.file.*;
 
 public class SpecialStringAgain {
     public static void main(String[] args){
-        Path filePath = Paths.get(".", "specialString.txt");
+        Path filePath = Paths.get(".", "SpecialString.txt");
         String specialString = "";
         try{
             specialString = Files.readString(filePath);
